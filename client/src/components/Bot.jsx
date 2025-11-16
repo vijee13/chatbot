@@ -16,7 +16,7 @@ function Bot() {
         setLoading(true);
         if(!input.trim()) return;
         try {
-           const res=await axios.post("http://localhost:3000/api/bot/message",{
+           const res=await axios.post("https://chatbot-backend-10mz.onrender.com/api/bot/message",{
                 text: input
             })
             if(res.status === 200) {
