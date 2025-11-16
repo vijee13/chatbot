@@ -15,7 +15,11 @@ mongoose.connect(process.env.MONGO_URI)
     .catch(err => console.error("MongoDB Connection Error:", err));
 
 app.use(express.json());
-app.use(cors())
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST"],
+}));
+
 
 // Routes
 app.use('/api/bot', botRoutes);
